@@ -1,6 +1,18 @@
 # Rust Algorithms
 This is a personal repository to commit different algorithms I write using Rust programming language as I continue to learn and contribute to other projects.
 
+## Reverse a vector
+```
+pub fn reverse_vector(my_vector: &mut Vec<i64>) -> &mut Vec<i64> {
+    let mut index = my_vector.len()-1;
+    for i in 0..my_vector.len() {
+        let current_element = my_vector.remove(index -i);
+        my_vector.push(current_element);
+    }
+    my_vector
+}
+```
+
 ## Find max and min of A and B
 ```
 mod find;
