@@ -1,6 +1,9 @@
+use crate::solution::two_sum;
+
 
 mod find;
 mod reverse;
+mod solution;
 
 fn main() {
     /*Find the max of two numbers A and B */
@@ -17,4 +20,10 @@ fn main() {
     let mut my_vector: Vec<i64> = vec![0,1,2,3,4,5,6];
     let reversed_vector = reverse::reverse_vector(&mut my_vector);
     println!("{:?}", reversed_vector);
+
+    /* Two Sum */
+    let nums: Vec<i32> = vec![2,7,11,15]; 
+    let target = 9;
+    let twosum = two_sum(nums, target);
+    println!("{:?}", twosum);
 }
