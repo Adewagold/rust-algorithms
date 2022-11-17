@@ -1,4 +1,4 @@
-use crate::solution::two_sum;
+use crate::solution::*;
 
 
 mod find;
@@ -26,4 +26,10 @@ fn main() {
     let target = 9;
     let twosum = two_sum(nums, target);
     println!("{:?}", twosum);
+    let nums_example_two: Vec<i32> = vec![2,7,11,15]; 
+    let nums_example_three: Vec<i32> = vec![3,2,4];
+    let two_sum_map_result = two_sum_map(nums_example_two,target);
+    let two_sum_map_result_ii = two_sum_map(nums_example_three,6);
+    println!("{:?}", two_sum_map_result);
+    println!("{:?}", two_sum_map_result_ii);
 }
