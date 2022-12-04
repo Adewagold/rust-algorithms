@@ -13,7 +13,8 @@ pub fn reverse_vector(my_vector: &mut Vec<i64>) -> &mut Vec<i64> {
  * For instance rotate a vector by one
  * Input:  0, 1, 2, 3, 4, 5, 6
  * Output: 6, 0, 1, 2, 3, 4, 5
- * 
+ * Pass the value of vector by mutable reference to prevent ownership of moving input vector to variable my_vector
+ * return my_vector reference
  */
 pub fn rotate_vector_once(my_vector: &mut Vec<i64>) -> &mut Vec<i64> {
     let last_digit = my_vector[my_vector.len()-1];
@@ -28,6 +29,14 @@ pub fn rotate_vector_once(my_vector: &mut Vec<i64>) -> &mut Vec<i64> {
     my_vector
 }
 
+
+/**
+ * For instance rotate a vector by n number of times clock-wise
+ * Input:  0, 1, 2, 3, 4, 5, 6
+ * Output: 6, 0, 1, 2, 3, 4, 5
+ * Pass the value of vector by mutable reference to prevent ownership of moving input vector to variable my_vector
+ * return my_vector reference
+ */
 pub fn rotate_vector_multiple_times(my_vector: &mut Vec<i64>, number_of_times: i32) -> &mut Vec<i64>{
     for i in 0..number_of_times{
         rotate_vector_once(my_vector);
@@ -36,7 +45,7 @@ pub fn rotate_vector_multiple_times(my_vector: &mut Vec<i64>, number_of_times: i
 }
 
 #[test]
-fn test_rotate_vector_once(){
+pub fn test_rotate_vector_once(){
     let mut sample_vector = vec![2,7,11,15]; 
     let result = rotate_vector_once(&mut sample_vector).to_vec();
     let expected = vec![15, 2, 7, 11];
@@ -46,8 +55,7 @@ fn test_rotate_vector_once(){
 
 
 #[test]
-fn test_rotate_vector_multiple_times(){
-    
+pub fn test_rotate_vector_multiple_times(){
     let mut sample_vector_ii = vec![0,1,2,3,4,5,6,7,8];
     let expected = vec![6,7,8,0,1,2,3,4,5];
     let sample_vector_two_relax = rotate_vector_multiple_times(&mut sample_vector_ii, 3).to_vec();

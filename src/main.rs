@@ -35,6 +35,20 @@ fn main() {
     println!("{:?}", two_sum_map_result);
     println!("{:?}", two_sum_map_result_ii);
 
+
+    println!("A simple function to rotate the items of a vector clock-wise");
+    let mut sample_vector = vec![2,7,11,15]; 
+    let result = reverse::rotate_vector_once(&mut sample_vector).to_vec();
+    println!("The rotated result of vector{:?} is {:?}", sample_vector,result);
+
+
+    let number_of_times = 4;
+    println!("A simple function to rotate the items of a vector clock-wise {} times",number_of_times);
+    let mut sample_vector_ii = vec![0,1,2,3,4,5,6,7,8];
+    let sample_vector_two_relax = reverse::rotate_vector_multiple_times(&mut sample_vector_ii, number_of_times).to_vec();
+    println!("The rotated result of vector{:?} is {:?}", sample_vector,sample_vector_two_relax);
+
+
     /* Greatest common divisor of two integers */
     let m = 15;
     let n = 14;
@@ -59,4 +73,5 @@ fn main() {
         println!("Iteration {}, result {}", m,d);
     }
     println!("The greatest common divisor of {:?} is {}.", numbers,d);
+
 }
