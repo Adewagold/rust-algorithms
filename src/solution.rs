@@ -48,3 +48,20 @@ use std::collections::HashMap;
         }
         n
     }
+
+    #[test]
+    fn test_greates_common_divisor(){
+        assert_eq!(greatest_common_divisor(14,15),1);
+        assert_eq!(greatest_common_divisor(2 * 3 * 5 * 11 * 17,3 * 7 * 11 * 13 *19),11 * 3);
+    }
+
+    #[test]
+    fn test_two_sum(){
+        let target = 9;
+        let nums_example_two: Vec<i32> = vec![2,7,11,15]; 
+        let two_sum_map_result = two_sum_map(nums_example_two,target);
+        let nums_example_three: Vec<i32> = vec![3,2,4];
+        let result = two_sum_map(nums_example_three,6);
+        assert_eq!(two_sum_map_result, vec![0,1]);
+        assert_eq!(result, vec![1,2]);
+    }

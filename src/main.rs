@@ -1,5 +1,6 @@
 use crate::solution::*;
-
+use std::env;
+use std::str::FromStr;
 
 mod find;
 mod reverse;
@@ -26,10 +27,36 @@ fn main() {
     let target = 9;
     let twosum = two_sum(nums, target);
     println!("{:?}", twosum);
+    let target = 9;
     let nums_example_two: Vec<i32> = vec![2,7,11,15]; 
     let nums_example_three: Vec<i32> = vec![3,2,4];
     let two_sum_map_result = two_sum_map(nums_example_two,target);
     let two_sum_map_result_ii = two_sum_map(nums_example_three,6);
     println!("{:?}", two_sum_map_result);
     println!("{:?}", two_sum_map_result_ii);
+
+    /* Greatest common divisor of two integers */
+    let m = 15;
+    let n = 14;
+    let common_divisor = greatest_common_divisor(n, m);
+    println!("Common divisor of n: {} and m: {} is {}", n,m,common_divisor);
+
+    /* */
+    let mut numbers = Vec::new();
+    for arg in env::args().skip(1){
+        numbers.push(u64::from_str(&arg).expect("Error parsing argument"));
+    }
+
+    if numbers.len()  < 1 {
+        eprintln!("Usage: GCD number ...");
+        std::process::exit(1);
+    }
+
+
+    let mut d = numbers[0];
+    for m in &numbers[1..]{
+        d = greatest_common_divisor(d, *m);
+        println!("Iteration {}, result {}", m,d);
+    }
+    println!("The greatest common divisor of {:?} is {}.", numbers,d);
 }
