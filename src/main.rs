@@ -5,8 +5,14 @@ use std::str::FromStr;
 mod find;
 mod reverse;
 mod solution;
+mod linkedlist;
 
 fn main() {
+    let mut ll = linkedlist::LinkedList::new();
+    ll.push_front(2);
+    ll.push_back(12);
+    ll.push_front(1);
+    println!("ll = {:?}", ll);
     /*Find the max of two numbers A and B */
     let a = 3;
     let b = 5;
